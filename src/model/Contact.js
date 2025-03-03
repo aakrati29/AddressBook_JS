@@ -19,7 +19,7 @@ class Contact {
 
     validateZip(zip) {
         if (!/^\d{5}(-\d{4})?$/.test(zip)) {
-            throw new Error("Invalid Zip Code! Must be in 5-digit or 9-digit (ZIP+4) format.");
+            throw new Error("Invalid Zip Code! Must be in 5-digit.");
         }
         return zip;
     }
