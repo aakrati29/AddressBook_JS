@@ -12,6 +12,17 @@ try {
     addressBook.addContact(contact2);
 
     addressBook.displayAllContacts();
+
+    console.log("\nFinding Contact: Aakrati Barsaiyan");
+    let foundContact = addressBook.findContact("Aakrati", "Barsaiyan");
+    if (foundContact) foundContact.display();
+    else console.log("Contact not found!");
+
+    console.log("\nEditing Contact: Aakrati Barsaiyan");
+    addressBook.editContact("Aakrati", "Barsaiyan", { city: "Bhopal", phoneNumber: "9999999999" });
+
+
+    addressBook.displayAllContacts();
     } 
 
     catch (error) {

@@ -24,6 +24,30 @@ class AddressBook {
             contact.display();
         });
     }
+
+    findContact(firstName, lastName) {
+        return this.contacts.find(contact => 
+            contact.firstName.toLowerCase() === firstName.toLowerCase() &&
+            contact.lastName.toLowerCase() === lastName.toLowerCase()
+        );
+    }
+
+    editContact(firstName, lastName, newDetails) {
+        let contact = this.findContact(firstName, lastName);
+        if (!contact) {
+            console.log("Contact not found!");
+            return;
+        }
+
+        if (newDetails.address) contact.address = newDetails.address;
+        if (newDetails.city) contact.city = newDetails.city;
+        if (newDetails.state) contact.state = newDetails.state;
+        if (newDetails.zip) contact.zip = contact.validateZip(newDetails.zip);
+        if (newDetails.phoneNumber) contact.phoneNumber = contact.validatePhoneNumber(newDetails.phoneNumber);
+        if (newDetails.email) contact.email = contact.validateEmail(newDetails.email);
+
+        console.log("Contact updated successfully!");
+    }
 }
 
 module.exports = AddressBook;
