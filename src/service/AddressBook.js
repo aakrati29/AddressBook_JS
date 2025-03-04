@@ -13,6 +13,21 @@ class AddressBook {
         }
     }
 
+    addContact(contact) {
+        const isDuplicate = this.contacts.some(existingContact =>
+            existingContact.firstName.toLowerCase() === contact.firstName.toLowerCase() &&
+            existingContact.lastName.toLowerCase() === contact.lastName.toLowerCase()
+        );
+
+        if (isDuplicate) {
+            console.log(`Contact ${contact.firstName} ${contact.lastName} already exists!`);
+            return;
+        }
+
+        this.contacts.push(contact);
+        console.log(`Contact ${contact.firstName} ${contact.lastName} added successfully!`);
+    }
+
     displayAllContacts() {
         if (this.contacts.length === 0) {
             console.log("No contacts in the address book.");
@@ -66,6 +81,10 @@ class AddressBook {
     //Get total number of contacts
     getContactCount() {
         return this.contacts.reduce((count) => count + 1, 0);
+    }
+
+    listAllNames() {
+        return this.contacts.map(contact => `${contact.firstName} ${contact.lastName}`);
     }
 }
 

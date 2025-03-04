@@ -8,10 +8,16 @@ try {
 
     const contact2 = new contact("Ram", "Gupta", "Indore", "MP", "India", 40125, "5157852252", "ramgupta@gmail.com");
 
+    const duplicateContact = new contact("Aakrati", "Barsaiyan", "Bhopal", "MP", "India", "20002", "9854271632", "aakrati44@gmail.com");
+
     addressBook.addContact(contact1);
     addressBook.addContact(contact2);
+    addressBook.addContact(duplicateContact);
 
     addressBook.displayAllContacts();
+    console.log("\nList of Names in Address Book:", addressBook.listAllNames());
+
+    console.log(`\nTotal Contacts: ${addressBook.getContactCount()}`);
 
     console.log("\nFinding Contact: Aakrati Barsaiyan");
     let foundContact = addressBook.findContact("Aakrati", "Barsaiyan");
@@ -26,8 +32,9 @@ try {
 
     console.log("\nDeleting Contact: Ram Gupta");
     addressBook.deleteContact("Ram", "Gupta");
-
+    
     addressBook.displayAllContacts();
+    
     } 
 
     catch (error) {
