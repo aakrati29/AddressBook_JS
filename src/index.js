@@ -22,6 +22,9 @@ try {
     addressBook.editContact("Aakrati", "Barsaiyan", { city: "Bhopal", phoneNumber: "9999999999" });
 
 
+    console.log("\nDeleting Contact: Ram Gupta");
+    addressBook.deleteContact("Ram", "Gupta");
+
     addressBook.displayAllContacts();
     } 
 

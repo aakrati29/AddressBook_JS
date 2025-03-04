@@ -48,6 +48,20 @@ class AddressBook {
 
         console.log("Contact updated successfully!");
     }
+
+    deleteContact(firstName, lastName) {
+        const index = this.contacts.findIndex(contact => 
+            contact.firstName.toLowerCase() === firstName.toLowerCase() &&
+            contact.lastName.toLowerCase() === lastName.toLowerCase()
+        );
+
+        if (index !== -1) {
+            this.contacts.splice(index, 1);
+            console.log(`Contact ${firstName} ${lastName} deleted successfully!`);
+        } else {
+            console.log("Contact not found!");
+        }
+    }
 }
 
 module.exports = AddressBook;
