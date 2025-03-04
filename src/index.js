@@ -4,14 +4,17 @@ const AddressBook = require('./service/AddressBook');
 try {
     let addressBook = new AddressBook();
 
-    const contact1 = new contact("Aakrati", "Barsaiyan", "Chhatarpur", "MP", "India", "20002", "9854271632", "aakrati44@gmail.com");
+    const contact1 = new contact("Aakrati", "Barsaiyan", "Bhopal", "MP", "India", "20002", "9854271632", "aakrati44@gmail.com");
 
     const contact2 = new contact("Ram", "Gupta", "Indore", "MP", "India", 40125, "5157852252", "ramgupta@gmail.com");
+
+    const contact3 = new contact("Ankiet", "Gupta", "Sagar", "MP", "India", 47715, "5621479933", "aniketgupta@gmail.com");
 
     const duplicateContact = new contact("Aakrati", "Barsaiyan", "Bhopal", "MP", "India", "20002", "9854271632", "aakrati99@gmail.com");
 
     addressBook.addContact(contact1);
     addressBook.addContact(contact2);
+    addressBook.addContact(contact3);
     addressBook.addContact(duplicateContact);
 
     addressBook.displayAllContacts();
