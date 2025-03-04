@@ -21,6 +21,8 @@ try {
     console.log("\nEditing Contact: Aakrati Barsaiyan");
     addressBook.editContact("Aakrati", "Barsaiyan", { city: "Bhopal", phoneNumber: "9999999999" });
 
+    //Get total contacts
+    console.log(`\nTotal Contacts in Address Book: ${addressBook.getContactCount()}`);
 
     console.log("\nDeleting Contact: Ram Gupta");
     addressBook.deleteContact("Ram", "Gupta");

@@ -62,6 +62,11 @@ class AddressBook {
             console.log("Contact not found!");
         }
     }
+
+    //Get total number of contacts
+    getContactCount() {
+        return this.contacts.reduce((count) => count + 1, 0);
+    }
 }
 
 module.exports = AddressBook;
