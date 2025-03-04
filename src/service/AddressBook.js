@@ -28,6 +28,28 @@ class AddressBook {
         console.log(`Contact ${contact.firstName} ${contact.lastName} added successfully!`);
     }
 
+    listContactsByCity(city) {
+        return this.contacts
+            .filter(contact => contact.city.toLowerCase() === city.toLowerCase())
+            .map(contact => `${contact.firstName} ${contact.lastName}`);
+    }
+
+    listContactsByState(state) {
+        return this.contacts
+            .filter(contact => contact.state.toLowerCase() === state.toLowerCase())
+            .map(contact => `${contact.firstName} ${contact.lastName}`);
+    }
+
+    countByCity(city) {
+        return this.contacts.reduce((count, contact) =>
+            contact.city.toLowerCase() === city.toLowerCase() ? count + 1 : count, 0);
+    }
+
+    countByState(state) {
+        return this.contacts.reduce((count, contact) =>
+            contact.state.toLowerCase() === state.toLowerCase() ? count + 1 : count, 0);
+    }
+
     displayAllContacts() {
         if (this.contacts.length === 0) {
             console.log("No contacts in the address book.");
