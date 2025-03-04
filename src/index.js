@@ -8,13 +8,9 @@ try {
 
     const contact2 = new contact("Ram", "Gupta", "Indore", "MP", "India", 40125, "5157852252", "ramgupta@gmail.com");
 
-<<<<<<< HEAD
-    const duplicateContact = new contact("Aakrati", "Barsaiyan", "Bhopal", "MP", "India", "20002", "9854271632", "aakrati44@gmail.com");
-=======
     const contact3 = new contact("Ankiet", "Gupta", "Sagar", "MP", "India", 47715, "5621479933", "aniketgupta@gmail.com");
 
     const duplicateContact = new contact("Aakrati", "Barsaiyan", "Bhopal", "MP", "India", "20002", "9854271632", "aakrati99@gmail.com");
->>>>>>> UC10
 
     addressBook.addContact(contact1);
     addressBook.addContact(contact2);
@@ -22,7 +18,6 @@ try {
     addressBook.addContact(duplicateContact);
 
     addressBook.displayAllContacts();
-    console.log("\nList of Names in Address Book:", addressBook.listAllNames());
 
     console.log(`\nTotal Contacts: ${addressBook.getContactCount()}`);
 
@@ -39,9 +34,9 @@ try {
 
     console.log("\nDeleting Contact: Ram Gupta");
     addressBook.deleteContact("Ram", "Gupta");
-    
+
     addressBook.displayAllContacts();
-    
+
     let searchCity = "Bhopal";
     let searchState = "India";
 
@@ -51,7 +46,10 @@ try {
     console.log(`\nContacts in State '${searchState}':`, addressBook.listContactsByState(searchState));
     console.log(`Total contacts in '${searchState}':`, addressBook.countByState(searchState));
 
-}
+    console.log("\nSorting Contacts Alphabetically:");
+        addressBook.sortContactsByName();
+    } 
+
     catch (error) {
     console.error(error.message);
     }

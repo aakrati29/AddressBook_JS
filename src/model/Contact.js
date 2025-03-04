@@ -38,6 +38,11 @@ class Contact {
         return email;
     }
 
+    toString() {
+        return `Name: ${this.firstName} ${this.lastName}, Address: ${this.address}, ${this.city}, ${this.state} ${this.zip}, Phone: ${this.phoneNumber}, Email: ${this.email}`;
+    }
+    
+
     display() {
         console.log(`Name: ${this.firstName} ${this.lastName}`);
         console.log(`Address: ${this.address}, ${this.city}, ${this.state} ${this.zip}`);
