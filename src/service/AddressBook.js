@@ -1,4 +1,5 @@
 const Contact = require("../model/Contact"); 
+
 class AddressBook {
     constructor() {
         this.contacts = [];
@@ -26,23 +27,6 @@ class AddressBook {
 
         this.contacts.push(contact);
         console.log(`Contact ${contact.firstName} ${contact.lastName} added successfully!`);
-    }
-
-    listContactsByCity(city) {
-        return this.contacts
-            .filter(contact => contact.city.toLowerCase() === city.toLowerCase())
-            .map(contact => `${contact.firstName} ${contact.lastName}`);
-    }
-
-    listContactsByState(state) {
-        return this.contacts
-            .filter(contact => contact.state.toLowerCase() === state.toLowerCase())
-            .map(contact => `${contact.firstName} ${contact.lastName}`);
-    }
-
-    countByCity(city) {
-        return this.contacts.reduce((count, contact) =>
-            contact.city.toLowerCase() === city.toLowerCase() ? count + 1 : count, 0);
     }
 
     countByState(state) {
@@ -104,6 +88,7 @@ class AddressBook {
     getContactCount() {
         return this.contacts.reduce((count) => count + 1, 0);
     }
+    
 
     listAllNames() {
         return this.contacts.map(contact => `${contact.firstName} ${contact.lastName}`);
