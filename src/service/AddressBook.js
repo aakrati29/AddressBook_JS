@@ -118,6 +118,24 @@ class AddressBook {
         console.log("\nContacts sorted alphabetically by name:");
         this.contacts.forEach(contact => console.log(contact.toString()));
     }
+
+    sortContactsByCity() {
+        this.contacts.sort((a, b) => a.city.localeCompare(b.city));
+        console.log("\nContacts sorted by City:");
+        this.contacts.forEach(contact => console.log(contact.toString()));
+    }
+    
+    sortContactsByState() {
+        this.contacts.sort((a, b) => a.state.localeCompare(b.state));
+        console.log("\nContacts sorted by State:");
+        this.contacts.forEach(contact => console.log(contact.toString()));
+    }
+    
+    sortContactsByZip() {
+        this.contacts.sort((a, b) => a.zip.toString().localeCompare(b.zip.toString()));
+        console.log("\nContacts sorted by Zip:");
+        this.contacts.forEach(contact => console.log(contact.toString()));
+    }
     
 }
 

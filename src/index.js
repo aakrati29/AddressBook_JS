@@ -48,6 +48,17 @@ try {
 
     console.log("\nSorting Contacts Alphabetically:");
         addressBook.sortContactsByName();
+
+    console.log("\nSorting Contacts by City:");
+        addressBook.sortContactsByCity();
+
+    console.log("\nSorting Contacts by State:");
+        addressBook.sortContactsByState();
+
+    console.log("\nSorting Contacts by Zip:");
+        addressBook.sortContactsByZip();
+        
+
     } 
 
     catch (error) {
